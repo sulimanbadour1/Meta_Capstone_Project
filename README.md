@@ -6,4 +6,4 @@
 
 ## Meta
 
-<img src="./src/assets/LandingPage.JPG" width="auto">
+<img src="./src/assets/LandingPage.JPG" width="auto" height="auto">
