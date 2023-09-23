@@ -1,8 +1,8 @@
 ## React Capstone Project
 
-### Little Lemon Webiste , Adding a Reservation Feature.
+## Little Lemon Webiste , Adding a Reservation Feature.
 
-## Using React, Tailwind and Material Tailwind.
+### Using React, Tailwind and Material Tailwind.
 
 ## Meta
 
