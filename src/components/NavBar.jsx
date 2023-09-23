@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../assets/LittleLemonLogo.svg";
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -23,11 +25,11 @@ const NavBar = () => {
               </div>
               {/* primary */}
               <div className="hidden lg:flex gap-8 pl-24 ">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <a href="\">Home</a>
                 <a href="#menu">Menu</a>
                 <a href="#reservations">Reservations</a>
                 <a href="#Order">Order Online</a>
+                <a href="#About">About</a>
               </div>
             </div>
             {/* secondary */}
@@ -40,7 +42,7 @@ const NavBar = () => {
                 </div>
               </div>
               {/* Mobile navigation toggle */}
-              <div className="lg:hidden flex items-center">
+              <div className="lg:hidden flex items-center z-auto">
                 <button onClick={() => setToggleMenu(!toggleMenu)}>
                   <Bars3Icon className="h-6" />
                 </button>

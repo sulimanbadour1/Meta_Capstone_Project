@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import Specials from "./components/Specials";
 import Testimonials from "./components/Testimonials";
 import "../src/index.css";
+import { Link, Route, Routes } from "react-router-dom";
 
 function App() {
   return (

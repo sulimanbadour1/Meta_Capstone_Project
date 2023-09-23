@@ -28,7 +28,7 @@ const Main = () => {
           <img
             src={HeroPhoto}
             alt="mockup"
-            className="relative z-40 object-cover w-full h-full rounded sm:p-10 xs:p-8"
+            className="relative z-40 object-cover w-full h-full rounded sm:p-10 xs:p-8 "
           />
         </div>
       </div>
