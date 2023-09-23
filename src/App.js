@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import Specials from "./components/Specials";
 import Testimonials from "./components/Testimonials";
+import "../src/index.css";
 
 function App() {
   return (
