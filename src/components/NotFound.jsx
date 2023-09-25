@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <main className="p-36 flex flex-col justify-center items-center">
+    <main className="p-48 flex flex-col justify-center items-center">
       <h1 className="text-9xl font-extrabold text-[#495E57] tracking-widest">
         404
       </h1>

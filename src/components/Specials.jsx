@@ -1,23 +1,31 @@
 import React from "react";
 import greekSalad from "../assets/greek salad.jpg";
-
-//import food1 from "../assets/restauranfood.jpg";
+import { Link } from "react-router-dom";
+import food1 from "../assets/restauranfood.jpg";
 // import Scooter from "../assets/delivery-scooter.png";
 const Specials = () => {
   return (
     <section>
-      <div className=" mt-9 grid max-w-screen-xl justify-center px-4 py-8 mx-auto p-5 ">
+      <div className=" mt-12 grid max-w-screen-xl justify-center px-4 py-8 mx-auto p-5 ">
         <div className="mr-auto place-self-center lg:col-span-7 ">
-          <h1 className="max-w-2xl mb-4 text-[#000] text-4xl font-semibold tracking-tight leading-none md:text-5xl xl:text-6xl">
-            This Week Specials!
-          </h1>
-
+          <div className="flow-root">
+            <h1 className="float-left max-w-2xl mb-4 text-[#000] text-4xl font-semibold tracking-tight leading-none md:text-5xl xl:text-6xl">
+              This Week Specials!
+            </h1>
+            {/*  button for CTA */}
+            <Link
+              to="/order"
+              className=" float-right inline-flex items-center justify-center px-6 py-3 text-black font-semibold text-xl  text-center bg-[#F4CE14] rounded-lg hover:bg-[#495E57] hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300"
+            >
+              Check Menu
+            </Link>
+          </div>
           <div className="container mx-auto flex flex-wrap  my-16 justify-between items-center">
             {/* Cards 1 */}
-            <div className="max-w-sm ml-6 bg-white border border-gray-200 rounded-lg shadow ">
+            <div className="max-w-sm ml-6 bg-white border border-gray-200 rounded-lg shadow overflow-hidden ">
               <a href="#greek">
                 <img
-                  className="rounded-t-lg"
+                  className="rounded-t-lg hover:scale-105 transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/3"
                   src={greekSalad}
                   alt="greekSalad"
                 />
@@ -61,10 +69,10 @@ const Specials = () => {
               </div>
             </div>
             {/* Cards 2 */}
-            <div className="max-w-sm ml-6  bg-white border border-gray-200 rounded-lg shadow ">
+            <div className="max-w-sm ml-6  bg-white border border-gray-200 rounded-lg shadow overflow-hidden  ">
               <a href="#greek">
                 <img
-                  className="rounded-t-lg"
+                  className="rounded-t-lg hover:scale-105 transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/3"
                   src={greekSalad}
                   alt="greekSalad"
                 />
@@ -108,10 +116,10 @@ const Specials = () => {
               </div>
             </div>
             {/* Cards 3 */}
-            <div className="max-w-sm ml-6  bg-white border border-gray-200 rounded-lg shadow ">
+            <div className="max-w-sm ml-6  bg-white border border-gray-200 rounded-lg shadow overflow-hidden  ">
               <a href="#greek">
                 <img
-                  className="rounded-t-lg"
+                  className="rounded-t-lg  hover:scale-105 transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/3"
                   src={greekSalad}
                   alt="greekSalad"
                 />

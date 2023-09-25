@@ -26,12 +26,17 @@ const NavBar = () => {
   }, []);
   // nav scroll
 
-  const handleClick = () => {
-    const ele = document.getElementById("about");
-    if (ele) {
-      ele.scrollIntoView({ behavior: "smooth" });
+  const handleClick = (anchor) => () => {
+    const id = `${anchor}-section`;
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
+
   return (
     <div>
       <nav
@@ -56,13 +61,26 @@ const NavBar = () => {
               {/* primary */}
 
               <div className="hidden lg:flex gap-8 pl-24">
-                <Link to="/">Home</Link>
+                {
+                  <>
+                    <a href="/#home" onClick={handleClick("home")}>
+                      Home
+                    </a>
+                    <Link to="/menu">Menu</Link>
+                    <a href="/#about" onClick={handleClick("about")}>
+                      About
+                    </a>
+                    <Link to="/reserve">Reservations</Link>
+                    <Link to="/order">Order Online</Link>
+                  </>
+                }
+                {/* <Link to="/">Home</Link>
                 <Link to="/menu">Menu</Link>
                 <Link to="/reserve">Reservations</Link>
                 <Link to="/order">Order Online</Link>
                 <Link to="/" onClick={handleClick}>
                   About
-                </Link>
+                </Link> */}
               </div>
             </div>
             {/* secondary */}

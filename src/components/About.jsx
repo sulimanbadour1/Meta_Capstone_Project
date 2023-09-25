@@ -3,7 +3,7 @@ import Mario from "../assets/Mario and Adrian A.jpg";
 const About = () => {
   return (
     <section
-      id="about"
+      id="about-section"
       className="mt-9 font-poppins grid max-w-screen-xl justify-center px-4 py-8 mx-auto p-5 "
     >
       <div className="max-w-6xl mr-auto  mx-auto md:px-6">
