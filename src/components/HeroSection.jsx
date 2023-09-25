@@ -28,11 +28,11 @@ const HeroSection = () => {
             Reserve a table
           </Link>
         </div>
-        <div className="lg:mt-0 lg:col-span-5 lg:row-span-10 lg:flex">
+        <div className="lg:mt-0 lg:col-span-5 lg:row-span-10 lg:flex overflow-hidden">
           <img
             src={HeroPhoto}
             alt="mockup"
-            className="relative z-40 object-cover w-full h-full rounded sm:p-10  md:p-12 xs:p-8 "
+            className="relative z-40 object-cover w-full h-full rounded sm:p-10  md:p-12 xs:p-8 hover:scale-105 transition duration-300 ease-in-out hover:shadow-lg hover:shadow-[#F4CE14] "
           />
         </div>
       </div>

@@ -120,7 +120,7 @@ const About = () => {
             <img
               src={Mario}
               alt="Owner"
-              className="relative z-40 object-cover w-full h-full rounded"
+              className="relative z-40 object-cover w-full h-full rounded hover:scale-105 transition duration-300 ease-in-out hover:shadow-sm hover:shadow-green-500 dark:hover:shadow-black/3"
             />
           </div>
         </div>
