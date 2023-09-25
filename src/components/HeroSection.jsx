@@ -1,6 +1,7 @@
 import React from "react";
 import HeroPhoto from "../assets/HeroPhoto.png";
 import place from "../assets/restaurant.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -20,12 +21,12 @@ const HeroSection = () => {
             open every day from 11:00 to 23:00. We look forward to your visit.
           </p>
 
-          <a
-            href="#reservations"
+          <Link
+            to="/reservation"
             className="inline-flex items-center justify-center px-5 py-3 text-black font-medium text-center bg-[#F4CE14] rounded-lg hover:bg-white focus:ring-4 focus:ring-green-900"
           >
             Reserve a table
-          </a>
+          </Link>
         </div>
         <div className="lg:mt-0 lg:col-span-5 lg:row-span-10 lg:flex">
           <img

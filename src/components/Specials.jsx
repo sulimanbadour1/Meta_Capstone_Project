@@ -15,7 +15,7 @@ const Specials = () => {
             {/*  button for CTA */}
             <Link
               to="/order"
-              className=" float-right inline-flex items-center justify-center px-6 py-3 text-black font-semibold text-xl  text-center bg-[#F4CE14] rounded-lg hover:bg-[#495E57] hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300"
+              className=" float-right inline-flex items-center justify-center px-5 py-3 text-black font-medium text-lg  text-center bg-[#F4CE14] rounded-lg hover:bg-[#495E57] hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300"
             >
               Check Menu
             </Link>

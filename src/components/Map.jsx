@@ -2,7 +2,7 @@ import React from "react";
 import logoYellow from "../assets/logo-yellow-png.png";
 const Map = () => {
   return (
-    <div className="container my-12 py-12 mx-auto px-4 md:px-6 lg:px-12">
+    <div className=" container my-12 py-12 mx-auto px-4 md:px-6 lg:px-12 ">
       <section className="mb-20 text-[#495E57]">
         <h3 className="text-3xl font-bold text-center mb-4">Get in touch</h3>
         <h2 className="text-base font-semibold text-center mb-12">

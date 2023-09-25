@@ -70,7 +70,7 @@ const NavBar = () => {
                     <a href="/#about" onClick={handleClick("about")}>
                       About
                     </a>
-                    <Link to="/reserve">Reservations</Link>
+                    <Link to="/reservation">Reservations</Link>
                     <Link to="/order">Order Online</Link>
                   </>
                 }
