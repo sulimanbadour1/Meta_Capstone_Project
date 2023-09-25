@@ -2,7 +2,10 @@ import React from "react";
 import Mario from "../assets/Mario and Adrian A.jpg";
 const About = () => {
   return (
-    <section className="mt-9 font-poppins grid max-w-screen-xl justify-center px-4 py-8 mx-auto p-5 ">
+    <section
+      id="about"
+      className="mt-9 font-poppins grid max-w-screen-xl justify-center px-4 py-8 mx-auto p-5 "
+    >
       <div className="max-w-6xl mr-auto  mx-auto md:px-6">
         <div className="flex flex-wrap ">
           <div className="w-full px-4 mb-20 lg:w-1/2 lg:mb-12 ">
@@ -20,11 +23,6 @@ const About = () => {
                 mediterranean cuisine with a touch of Czech tradition. <br /> We
                 look forward to your visit. We offer the best food in the entire
                 city of Prague.
-                <br />
-                <br />
-                <span className="text-lg  font-semibold">
-                  Address Praha 1, Vodičkova 30.
-                </span>
               </p>
               <div className="flex flex-wrap items-center">
                 <div className="w-full px-4 mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
@@ -129,46 +127,6 @@ const About = () => {
       </div>
     </section>
   );
-};
+}; // eslint-disable-next-line
 
 export default About;
-
-{
-  /* <section className="bg-[#fff] ">
-<div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-  <div className="mr-auto place-self-center lg:col-span-7">
-    <h1 className="max-w-2xl mb-4 text-[#000] text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
-      Little Lemon
-    </h1>
-    <h2 className="max-w-2xl mt-4 mb-4 text-gray-500 text-xl font-bold tracking-tight leading-none md:text-2xl xl:text-4xl">
-      Prague
-    </h2>
-    <p className="max-w-2xl mt-8 mb-8 font-light text-gray-700 lg:mb-8 md:text-base lg:text-sm ">
-      We are a small family restaurant in the heart of Prague. We offer
-      mediterranean cuisine with a touch of Czech tradition. <br /> We are
-      open every day from 11:00 to 23:00. We look forward to your visit.
-      We offer the best food in the entire city of Prague. Come and visit
-      us and you will not regret it.
-      <br />
-      <span className="text-lg  font-semibold">
-        Address Praha 1, Vodičkova 30.
-      </span>
-    </p>
-
-    <a
-      href="#reservations"
-      className="inline-flex items-center justify-center px-5 py-3 text-black font-medium text-center bg-[#F4CE14] rounded-lg hover:bg-slate-100 focus:ring-4 focus:ring-gray-100"
-    >
-      Reserve a table
-    </a>
-  </div>
-  <div className="lg:mt-0 lg:col-span-5 lg:row-span-10 lg:flex">
-    <img
-      src={HeroPhoto}
-      alt="mockup"
-      className="xs:hidden sm:hidden md:hidden lg:block xl:block"
-    />
-  </div>
-</div> */
-}
-// </section>

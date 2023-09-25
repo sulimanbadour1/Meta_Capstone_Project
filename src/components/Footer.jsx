@@ -4,14 +4,8 @@ import { Typography } from "@material-tailwind/react";
 const LINKS = [
   {
     title: "Our Links",
-    items: [
-      "Home ",
-      "Menu  ",
-      "About",
-      "Reservation ",
-      "Order Online",
-      "Login",
-    ],
+    items: ["Home", "Menu  ", "About", "Reservation ", "Order Online", "Login"],
+    links: ["/", "/menu", "/about", "/reservation", "/order", "/login"],
   },
   {
     title: "Contact us",
@@ -27,12 +21,12 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="p-16 relative w-full bg-[#495E57]">
+    <footer id="footer" className="p-16 relative w-full bg-[#495E57]">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
           <a href="#home" className="flex items-center justify-start gap-2">
             <Typography variant="h5" className="mb-12 pl-12 text-white">
-              <img src={logo} alt="logo" className="w-40" />
+              <img src={logo} alt="logo" className="w-36" />
             </Typography>
           </a>
 
@@ -50,7 +44,7 @@ const Footer = () => {
                   <li key={link}>
                     <Typography
                       as="a"
-                      href="#"
+                      href={link}
                       color="gray"
                       className="py-1.5 font-normal transition-colors text-white hover:text-[#F4CE14]"
                     >

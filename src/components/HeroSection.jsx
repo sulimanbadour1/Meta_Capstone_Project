@@ -1,8 +1,11 @@
 import React from "react";
 import HeroPhoto from "../assets/HeroPhoto.png";
-const Main = () => {
+import place from "../assets/restaurant.jpg";
+
+const HeroSection = () => {
   return (
-    <section className="bg-[#495E57] ">
+    <section className="bg-[#495E57] pt-28">
+      {/* <section className={`bg-[${place}] pt-28 bg-cover bg-center bg-no-repeat`}> */}
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
           <h1 className="max-w-2xl mb-4 text-[#F4CE14] text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
@@ -19,7 +22,7 @@ const Main = () => {
 
           <a
             href="#reservations"
-            className="inline-flex items-center justify-center px-5 py-3 text-black font-medium text-center bg-[#F4CE14] rounded-lg hover:bg-slate-100 focus:ring-4 focus:ring-gray-100"
+            className="inline-flex items-center justify-center px-5 py-3 text-black font-medium text-center bg-[#F4CE14] rounded-lg hover:bg-white focus:ring-4 focus:ring-green-900"
           >
             Reserve a table
           </a>
@@ -28,7 +31,7 @@ const Main = () => {
           <img
             src={HeroPhoto}
             alt="mockup"
-            className="relative z-40 object-cover w-full h-full rounded sm:p-10 xs:p-8 "
+            className="relative z-40 object-cover w-full h-full rounded sm:p-10  md:p-12 xs:p-8 "
           />
         </div>
       </div>
@@ -36,4 +39,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default HeroSection;

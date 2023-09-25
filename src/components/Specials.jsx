@@ -1,7 +1,7 @@
 import React from "react";
 import greekSalad from "../assets/greek salad.jpg";
 
-import food1 from "../assets/restauranfood.jpg";
+//import food1 from "../assets/restauranfood.jpg";
 // import Scooter from "../assets/delivery-scooter.png";
 const Specials = () => {
   return (
