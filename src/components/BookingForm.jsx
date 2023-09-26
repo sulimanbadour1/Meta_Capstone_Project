@@ -35,6 +35,15 @@ const BookingForm = ({ availableTimes, dispatch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setBookingDetails(formData);
+    // setFormData({
+    //   date: "",
+    //   time: "",
+    //   numberofguests: "",
+    //   occasion: "",
+    //   name: "",
+    //   phone: "",
+    //   email: "",
+    // });
   };
 
   useEffect(() => {

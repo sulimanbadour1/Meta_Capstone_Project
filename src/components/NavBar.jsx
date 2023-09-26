@@ -61,7 +61,7 @@ const NavBar = () => {
               </div>
               {/* primary */}
 
-              <div className="hidden lg:flex gap-8 pl-24">
+              <div className="hidden lg:flex gap-9 pl-24">
                 {
                   <>
                     <a href="/#home" onClick={handleClick("home")}>
@@ -89,7 +89,7 @@ const NavBar = () => {
               <div className="hidden xs:flex items-center gap-10">
                 <div>
                   <Link to="/404">
-                    <button className="rounded-full border-solid border-2 border-gray-300 py-2 px-6 hover:bg-[#495E57] hover:text-gray-100">
+                    <button className="rounded-lg  bg-[#495E57] text-white  border-gray-300 py-3 px-7 hover:bg-[#F4CE14] hover:text-black ">
                       Login
                     </button>
                   </Link>
