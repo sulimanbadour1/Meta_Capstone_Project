@@ -1,46 +1,66 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 
-const BookingForm = () => {
+import ConfirmationContext from "../components/ConfirmationContext";
+import { useNavigate } from "react-router-dom";
+
+const BookingForm = ({ availableTimes, dispatch }) => {
   // Logic for the form goes here
+  const { bookingDetails, setBookingDetails } = useContext(ConfirmationContext);
+
+  const navigate = useNavigate();
+  // Define state variables
 
   const [formData, setFormData] = useState({
     date: "",
-    time: "17:00",
+    time: "",
     numberofguests: "",
-    occasion: "Birthday",
+    occasion: "",
     name: "",
     phone: "",
     email: "",
   });
 
+  // Handle input changes
   const handleInputChange = (e) => {
-    e.preventDefault();
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+
+    if (name === "date") {
+      // Dispatch an action to update times when date changes
+      dispatch({ type: "UPDATE_TIMES", date: value });
+    }
+  };
+  // Handle form submission (this is a placeholder; you might want to send data somewhere)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBookingDetails(formData);
   };
 
+  useEffect(() => {
+    if (Object.keys(bookingDetails).length > 0) {
+      // eslint-disable-next-line
+      navigate("/confirmation"); // navigate to confirmation page
+    } // eslint-disable-next-line
+  }, [bookingDetails]);
+
+  // Validation (placeholder; you can expand on this)
   const isFormValid = () => {
-    for (const key in formData) {
-      if (formData[key] === "") return false;
-    }
-    return true;
+    // For demonstration, just checking if all fields have a value
+    return Object.values(formData).every((value) => value !== "");
   };
 
   return (
     <div className="flex items-center justify-center pt-8">
       <div className="mx-auto w-full max-w-[550px] bg-transparent">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="-mx-3 flex flex-wrap">
-            {/* //date */}
+            {/* Date Field */}
             <div className="w-full px-3 sm:w-1/2">
               <div className="mb-5">
                 <label
                   htmlFor="date"
-                  className="mb-3 block text-base font-medium text-[#495E57] "
+                  className="mb-3 block text-base font-medium text-[#495E57]"
                 >
                   Date
                 </label>
@@ -54,12 +74,13 @@ const BookingForm = () => {
                 />
               </div>
             </div>
-            {/* Time */}
+
+            {/* Time Field */}
             <div className="w-full px-3 sm:w-1/2">
               <div className="mb-5">
                 <label
                   htmlFor="time"
-                  className="mb-3 block text-base font-medium text-[#495E57] "
+                  className="mb-3 block text-base font-medium text-[#495E57]"
                 >
                   Time
                 </label>
@@ -68,23 +89,24 @@ const BookingForm = () => {
                   name="time"
                   value={formData.time}
                   onChange={handleInputChange}
-                  className="w-full rounded-md border border-[#e0e0e0]  bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#aea942] focus:shadow-md"
+                  className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 >
-                  <option value="17:00">17:00</option>
-                  <option value="18:00">18:00</option>
-                  <option value="19:00">19:00</option>
-                  <option value="20:00">20:00</option>
-                  <option value="21:00">21:00</option>
+                  {availableTimes.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
           </div>
-          {/* Guests number */}
+
+          {/* Number of Guests Field */}
           <div className="mb-5">
             <label
               htmlFor="noofguests"
               type="number"
-              className="mb-3 block text-base font-medium text-[#495E57] "
+              className="mb-3 block text-base font-medium text-[#495E57]"
             >
               Number of Guests
             </label>
@@ -92,18 +114,21 @@ const BookingForm = () => {
               type="number"
               name="numberofguests"
               id="noofguests"
+              min={0}
+              max={12}
               value={formData.numberofguests}
               onChange={handleInputChange}
               placeholder="Enter number of guests"
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
-          {/* Occasion  */}
+
+          {/* Occasion Field */}
           <div className="mb-5">
             <label
               htmlFor="occasion"
               type="occasion"
-              className="mb-3 block text-base font-medium text-[#495E57] "
+              className="mb-3 block text-base font-medium text-[#495E57]"
             >
               Occasion
             </label>
@@ -115,21 +140,24 @@ const BookingForm = () => {
               className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             >
               <option value="Birthday">Birthday</option>
+              <option value="Wedding">Wedding</option>
               <option value="Anniversary">Anniversary</option>
               <option value="Business">Business</option>
               <option value="Other">Other</option>
             </select>
           </div>
-          {/* Contact Details */}
+
+          {/* Contact Details Section */}
           <div className="mb-5 pt-3">
-            <label className="mb-5 block text-base font-semibold text-[#495E57]  sm:text-xl">
+            <label className="mb-5 block text-base font-extrabold text-[#495E57]  sm:text-xl">
               Contact Details
             </label>
-            {/* Full name */}
+
+            {/* Full Name Field */}
             <div className="mb-5">
               <label
                 htmlFor="name"
-                className="mb-3 block text-base font-medium text-[#495E57] "
+                className="mb-3 block text-base font-medium text-[#495E57]"
               >
                 Full Name
               </label>
@@ -143,11 +171,12 @@ const BookingForm = () => {
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
-            {/* Phone number */}
+
+            {/* Phone Number Field */}
             <div className="mb-5">
               <label
                 htmlFor="phone"
-                className="mb-3 block text-base font-medium text-[#495E57] "
+                className="mb-3 block text-base font-medium text-[#495E57]"
               >
                 Phone Number
               </label>
@@ -157,16 +186,17 @@ const BookingForm = () => {
                 id="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="Enter your phone number"
+                placeholder="Phone Number"
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
-            {/* Email */}
+
+            {/* Email Field */}
             <div className="mb-5">
               <label
                 htmlFor="email"
                 type="email"
-                className="mb-3 block text-base font-medium text-[#495E57] "
+                className="mb-3 block text-base font-medium text-[#495E57]"
               >
                 Email Address
               </label>
@@ -181,16 +211,19 @@ const BookingForm = () => {
               />
             </div>
           </div>
+
+          {/* Submit Button */}
           <div>
-            {/* Button Sumbit */}
+            {/* <Link to="/confirmation"> */}
             <button
               disabled={!isFormValid()}
               type="submit"
               value="Submit"
-              className="hover:shadow-form w-full rounded-md cursor-pointer bg-[#495E57] disabled:bg-[#51615cb0] hover:bg-blue-gray-600 py-3 px-8 text-center text-base font-semibold text-white outline-none"
+              className="hover:shadow-form w-full rounded-md cursor-pointer bg-[#495E57] disabled:bg-[#51615cb0] hover:bg-[#49a788] py-3 px-8 text-center text-base font-semibold text-white outline-none"
             >
               Book Appointment
             </button>
+            {/* </Link> */}
           </div>
         </form>
       </div>

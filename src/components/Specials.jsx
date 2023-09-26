@@ -1,7 +1,7 @@
 import React from "react";
 import greekSalad from "../assets/greek salad.jpg";
 import { Link } from "react-router-dom";
-import food1 from "../assets/restauranfood.jpg";
+
 // import Scooter from "../assets/delivery-scooter.png";
 const Specials = () => {
   return (
@@ -15,7 +15,7 @@ const Specials = () => {
             {/*  button for CTA */}
             <Link
               to="/order"
-              className=" float-right inline-flex items-center justify-center px-5 py-3 text-black font-medium text-lg  text-center bg-[#F4CE14] rounded-lg hover:bg-[#495E57] hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300"
+              className=" float-right inline-flex items-center justify-center px-5 py-3 text-black font-medium text-base  text-center bg-[#F4CE14] rounded-lg hover:bg-[#495E57] hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300"
             >
               Check Menu
             </Link>
@@ -31,7 +31,7 @@ const Specials = () => {
                 />
               </a>
               <div className="p-5">
-                <a href="#">
+                <a href="/greek">
                   <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 ">
                     Greek Salad
                   </h5>
@@ -70,7 +70,7 @@ const Specials = () => {
             </div>
             {/* Cards 2 */}
             <div className="max-w-sm ml-6  bg-white border border-gray-200 rounded-lg shadow overflow-hidden  ">
-              <a href="#greek">
+              <a href="#greek4">
                 <img
                   className="rounded-t-lg hover:scale-105 transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/3"
                   src={greekSalad}
@@ -78,7 +78,7 @@ const Specials = () => {
                 />
               </a>
               <div className="p-5">
-                <a href="#">
+                <a href="#greek5">
                   <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 ">
                     Greek Salad
                   </h5>
@@ -125,7 +125,7 @@ const Specials = () => {
                 />
               </a>
               <div className="p-5">
-                <a href="#">
+                <a href="#greek21">
                   <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 ">
                     Greek Salad
                   </h5>

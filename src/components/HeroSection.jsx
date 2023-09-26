@@ -25,7 +25,7 @@ const HeroSection = () => {
 
           <Link
             to="/reservation"
-            className="inline-flex items-center justify-center px-5 py-3 text-black font-medium text-center bg-[#F4CE14] rounded-lg hover:bg-white focus:ring-4 focus:ring-green-900"
+            className="bg-[#F4CE14]  inline-flex items-center justify-center px-5 py-3 text-black font-medium text-base  text-center  rounded-lg hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300"
           >
             Reserve a table
           </Link>

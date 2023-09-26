@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/LittleLemonLogo.svg";
+
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 // import { Link } from "react-router-dom";
@@ -55,7 +56,7 @@ const NavBar = () => {
                   onClick={handleClick("Home")}
                   className="flex gap-1 font-bold text-gray-700 items-center "
                 >
-                  <img src={logo} alt="logo" />
+                  <img src={logo} alt="logo" width="auto" />
                 </a>
               </div>
               {/* primary */}
