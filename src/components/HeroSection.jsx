@@ -1,6 +1,8 @@
 import React from "react";
-import HeroPhoto from "../assets/HeroPhoto.png";
+import HeroPhoto from "../assets/HeroPhoto.png"; // eslint-disable-next-line
 import place from "../assets/restaurant.jpg";
+import HeroPhoto2 from "../assets/Mario and Adrian A.jpg";
+import { Carousel, IconButton } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -29,11 +31,79 @@ const HeroSection = () => {
           </Link>
         </div>
         <div className="lg:mt-0 lg:col-span-5 lg:row-span-10 lg:flex overflow-hidden">
-          <img
+          {/* <img
             src={HeroPhoto}
             alt="mockup"
             className="relative z-40 object-cover w-full h-full rounded sm:p-10  md:p-12 xs:p-8 hover:scale-105 transition duration-300 ease-in-out hover:shadow-lg hover:shadow-[#F4CE14] "
-          />
+          /> */}
+          {/* Added Carousel for the Hero Section */}
+          <Carousel
+            className="rounded-xl overflow-hidden shadow-2xl sm:pt-8 xs:pt-4 md:pt-4 lg:pt-8 xl:pt-8"
+            prevArrow={({ handlePrev }) => (
+              <IconButton
+                variant="text"
+                color="white"
+                size="xl"
+                onClick={handlePrev}
+                className="!absolute top-2/4 left-4 -translate-y-2/4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                  />
+                </svg>
+              </IconButton>
+            )}
+            nextArrow={({ handleNext }) => (
+              <IconButton
+                variant="text"
+                color="white"
+                size="lg"
+                onClick={handleNext}
+                className="!absolute top-2/4 !right-4 -translate-y-2/4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </IconButton>
+            )}
+          >
+            <img
+              src={HeroPhoto}
+              alt="Food"
+              className="h-full w-full object-cover"
+            />
+            <img
+              src={place}
+              alt="restaurant"
+              className="h-full w-full object-cover"
+            />
+            <img
+              src={HeroPhoto2}
+              alt="Owners"
+              className="h-full w-full object-cover"
+            />
+          </Carousel>
         </div>
       </div>
     </section>
